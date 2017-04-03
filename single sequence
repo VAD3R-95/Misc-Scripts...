@@ -1,0 +1,5 @@
+!#/bin/bash
+for i in seq $(0 9) seq $(0 9) seq$(0 9);  #n $(ranges) for digits/alphabets
+do
+echo "VADER" $i                   #use with any string or as it is
+done
