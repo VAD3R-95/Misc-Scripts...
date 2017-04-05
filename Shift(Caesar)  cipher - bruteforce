@@ -14,7 +14,7 @@ def decrypt(k,cipher):
             print plaintext
 
 def main(argv):
-            c = open("c://ch7.bin","rb")             //to read fron deasktop file
+            c = open("c://xxx.bin","rb")             //to read fron deasktop file (bin/txt)..
             cipher = c.read()                        //for string: cipher = raw_input("your string")
 
             for i in range(1,95,1):
