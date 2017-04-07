@@ -1,4 +1,4 @@
-# Bruteforce Scripts
+# MY Scripts
 
 for ctfs and online challenges
 
