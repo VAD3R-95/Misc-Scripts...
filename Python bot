@@ -1,0 +1,61 @@
+#Simple IRC Chat bot
+#Python 
+
+
+
+import socket
+import time
+
+def ppong():
+    while 1:
+        text=b""
+        text=irc.recv(2040)
+        print(text)
+        check=text.find(b"PING")
+        if check>-1:
+            text=text[check:]
+            if text[5:].find(b" ")>0:    #check message sent after PING
+                text=text[:(text[5:].find(b" "))+4]+b"\r\n" #if yes then obtain only PING
+
+            text=text.replace(b"PING",b"PONG") #reply PING with PONG
+            irc.send(text)
+            break
+
+def reply():
+    while 1:
+        time.sleep(2)
+        text=b""
+        try:
+            text=irc.recv(2040)
+            print(text)
+        except Exception:
+            pass
+        if(text.find(b":hi")!=-1):
+            irc.send("PRIVMSG"+channel+":hola\r\n")
+        text=""
+    
+    
+            
+
+server="irc.freenode.net" #host to connect
+botnick="Vader" 
+channel="##testchannel1" 
+
+#Establish connection 
+irc = socket.socket(socket.AF_INET, socket.SOCK_STREAM) 
+irc.connect((server,6667)) 
+irc.setblocking(False) 
+time.sleep(1) 
+irc.send("USER "+botnick+" "+botnick+" "+botnick+" :My bot!\r\n") 
+time.sleep(1) 
+irc.send("NICK "+botnick+"\n") 
+time.sleep(1) 
+irc.send("JOIN "+channel+"\n")
+print("Starting ping:pong")
+time.sleep(1)
+ppong()
+print("TALKING ON:")
+reply()
+print("THANKYOU:")
+
+input()
