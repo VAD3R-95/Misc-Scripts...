@@ -56,7 +56,7 @@ else:
     time.sleep(1)
     print("ping:pong")
     ppong()
-    print("reply")
+    print("reply")                    #define functions to increase bot interaction
     reply()
 
 print("good day:")
