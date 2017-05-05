@@ -14,7 +14,7 @@ from threading import Thread
 
 def extract(zFile,passw):
     try:
-        zFile.extractall(pwd=bytes(passw,'utf-8'))
+        zFile.extractall(pwd=passw)
         return passw
     except:
         pass
