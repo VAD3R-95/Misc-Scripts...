@@ -24,7 +24,7 @@ def extract(zFile,passw):
 
 def main():
     start_time = time.time()
-    zFile = zipfile.ZipFile("ch5.zip")
+    zFile = zipfile.ZipFile("crack.zip")
     with open("password-list.txt",'r')  as f:
         for line in f:
             passw = line.strip('\n')
