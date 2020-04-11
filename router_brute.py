@@ -10,8 +10,8 @@ print(custom_fig.renderText('Huawei Router Attacker'))
 print(custom_fig.renderText('        - VAD3R'))
 
 driver = webdriver.Firefox(executable_path=r'path-to-executable') # path to selenium geckodriver
-delay = 8 # give delay as you require
-driver.get('router_ip')
+delay = 8                                                         # give delay as you require
+driver.get('router_ip')                                           # router IP address  
 alert_obj = driver.switch_to.alert
 alert_obj.accept()
 time.sleep(delay)
