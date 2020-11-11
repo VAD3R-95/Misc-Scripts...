@@ -12,7 +12,7 @@ def drag_square(distance):
 start_time = time.time()
 try:
     while True:
-        print("--------Running Auto Script--------- :)")
+        print(" --------Running Auto Script--------- :)")
         drag_square(200)
         time.sleep(1)
         pyautogui.press('alt')
